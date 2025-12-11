@@ -14,9 +14,9 @@ namespace DocumentsService.src.interfaces
     public interface IDocumentRepository
     {
          Task<Document> CreateAsync(Document doc);
-        Task<Document> GetByIdAsync(Guid id);
+        Task<Document?> GetByIdAsync(Guid id);
         Task<IEnumerable<Document>> GetByWorkspaceAsync(Guid workspaceId);
-        Task<Document> UpdateContentAsync(Guid id, string contentJson);
+        Task<Document?> UpdateContentAsync(Guid id, string contentJson);
         Task<bool> SoftDeleteAsync(Guid id);
     }
 }

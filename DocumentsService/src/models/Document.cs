@@ -9,12 +9,13 @@ namespace DocumentsService.src.models
     {
         public Guid Id { get; set; }
         public Guid WorkspaceId { get; set; }
-        public string Title { get; set; } = null!;
-        public string Icon { get; set; } = null!;
-        public string ContentUrl { get; set; } = null!;
+        public string Title { get; set; } = string.Empty;
+        public string? Icon { get; set; }
+        public string ContentJson { get; set; } = "[]"; // <-- debe existir
         public bool IsDeleted { get; set; } = false;
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
+        public string? OwnerId { get; set; }
     }
 }
