@@ -8,6 +8,9 @@ using DocumentsService.src.models;
 
 namespace DocumentsService.src.repositories
 {
+    /// <summary>
+    /// Repositorio que implementa los metodos declarados de la interfaz de documentos
+    /// </summary>
     public class DocumentRepository : IDocumentRepository
     {
          // Un ConcurrentDictionary para seguridad en caso de acceso concurrente
