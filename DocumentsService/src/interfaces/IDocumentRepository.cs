@@ -18,5 +18,6 @@ namespace DocumentsService.src.interfaces
         Task<IEnumerable<Document>> GetByWorkspaceAsync(Guid workspaceId);
         Task<Document?> UpdateContentAsync(Guid id, string contentJson);
         Task<bool> SoftDeleteAsync(Guid id);
+        void SeedDocument(Document doc);
     }
 }

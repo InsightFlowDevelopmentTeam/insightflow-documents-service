@@ -33,3 +33,4 @@ C:\Users\damat\Desktop\Arquitectura de sistemas\Talleres\Taller 3\insightflow-ba
 C:\Users\damat\Desktop\Arquitectura de sistemas\Talleres\Taller 3\insightflow-backend\insightflow-documents-service\DocumentsService\obj\Debug\net9.0\DocumentsService.pdb
 C:\Users\damat\Desktop\Arquitectura de sistemas\Talleres\Taller 3\insightflow-backend\insightflow-documents-service\DocumentsService\obj\Debug\net9.0\DocumentsService.genruntimeconfig.cache
 C:\Users\damat\Desktop\Arquitectura de sistemas\Talleres\Taller 3\insightflow-backend\insightflow-documents-service\DocumentsService\obj\Debug\net9.0\ref\DocumentsService.dll
+C:\Users\damat\Desktop\Arquitectura de sistemas\Talleres\Taller 3\insightflow-backend\insightflow-documents-service\DocumentsService\bin\Debug\net9.0\Bogus.dll

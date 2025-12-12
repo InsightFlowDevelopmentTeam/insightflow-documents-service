@@ -61,5 +61,13 @@ namespace DocumentsService.src.repositories
             _store[id] = doc;
             return Task.FromResult(true);
         }
+
+        public void SeedDocument(Document doc)
+        {
+             // Si existe, sobreescribir
+            if (doc.Id == Guid.Empty) doc.Id = Guid.NewGuid();
+            if (string.IsNullOrWhiteSpace(doc.ContentJson)) doc.ContentJson = "[]";
+            _store[doc.Id] = doc;
+        }
     }
 }

@@ -16,6 +16,13 @@ builder.Services.AddSingleton<IDocumentRepository, DocumentRepository>();
 
 var app = builder.Build();
 
+// Ejecutar DataSeeder al iniciar el servicio
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = DocumentsService.src.data.DataSeeder.InitializeAsync(scope.ServiceProvider);
+    seeder.Wait();
+}
+
 // Configure Swagger for development
 if (app.Environment.IsDevelopment())
 {
