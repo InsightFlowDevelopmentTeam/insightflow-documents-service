@@ -14,9 +14,8 @@ namespace DocumentsService.src.mappers
     /// </summary>
     public static class DocumentMapper
     {
-        public static DocumentDto? ToDto(this Document doc)
+        public static DocumentDto ToDto(this Document doc)
         {
-            if (doc == null) return null;
             return new DocumentDto
             {
                 Id = doc.Id,
