@@ -69,5 +69,27 @@ namespace DocumentsService.src.repositories
             if (string.IsNullOrWhiteSpace(doc.ContentJson)) doc.ContentJson = "[]";
             _store[doc.Id] = doc;
         }
+
+        public Task<Document?> UpdateMetadataAsync(Guid id, string? title, string? icon)
+        {
+            if (!_store.TryGetValue(id, out var doc) || doc.IsDeleted)
+            {
+                return Task.FromResult<Document?>(null);
+            }
+
+            // Solo modificar si vienen valores
+            if (!string.IsNullOrWhiteSpace(title))
+                doc.Title = title;
+
+            if (!string.IsNullOrWhiteSpace(icon))
+                doc.Icon = icon;
+
+            doc.UpdatedAt = DateTime.UtcNow;
+
+            // Guardar nuevamente en el store
+            _store[id] = doc;
+
+            return Task.FromResult<Document?>(doc);
+        }
     }
 }

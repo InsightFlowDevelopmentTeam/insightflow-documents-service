@@ -19,5 +19,6 @@ namespace DocumentsService.src.interfaces
         Task<Document?> UpdateContentAsync(Guid id, string contentJson);
         Task<bool> SoftDeleteAsync(Guid id);
         void SeedDocument(Document doc);
+        Task<Document?> UpdateMetadataAsync(Guid id, string? title, string? icon);
     }
 }
