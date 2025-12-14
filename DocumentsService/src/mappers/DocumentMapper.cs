@@ -37,7 +37,10 @@ namespace DocumentsService.src.mappers
                 Title = dto.Title,
                 Icon = dto.Icon,
                 ContentJson = string.IsNullOrWhiteSpace(dto.ContentJson) ? "[]" : dto.ContentJson,
-                OwnerId = dto.OwnerId
+                OwnerId = dto.OwnerId,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                IsDeleted = false
             };
         }
 
