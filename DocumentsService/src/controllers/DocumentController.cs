@@ -69,5 +69,16 @@ namespace DocumentsService.src.controllers
             if (!ok) return NotFound();
             return Ok(new { message = "Document moved to trash (soft deleted)." });
         }
+
+        [HttpPatch("{id:guid}/metadata")]
+        public async Task<IActionResult> UpdateMetadata(Guid id, [FromBody] UpdateMetadataDTo dto)
+        {
+            var updated = await _repo.UpdateMetadataAsync(id, dto.Title, dto.Icon);
+
+            if (updated == null)
+                return NotFound();
+
+            return Ok(updated.ToDto());
+        }
     }
 }
