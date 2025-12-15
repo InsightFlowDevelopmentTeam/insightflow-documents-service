@@ -27,6 +27,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 // Ejecutar DataSeeder al iniciar el servicio
 using (var scope = app.Services.CreateScope())
