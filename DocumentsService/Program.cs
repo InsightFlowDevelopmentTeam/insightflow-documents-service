@@ -14,6 +14,18 @@ builder.Services.AddSwaggerGen();
 // Repositorio en memoria
 builder.Services.AddSingleton<IDocumentRepository, DocumentRepository>();
 
+// Configura CORS para permitir solicitudes desde cualquier origen
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Ejecutar DataSeeder al iniciar el servicio
